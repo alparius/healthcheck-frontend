@@ -1,0 +1,12 @@
+.e-appointment {
+    background: red !important;
+    margin-left: 5px;
+}
+
+.e-popup-header {
+    background: red !important;
+}
+
+button.e-primary {
+    color: red !important;
+}

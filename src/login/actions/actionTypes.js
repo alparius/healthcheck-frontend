@@ -1,0 +1,6 @@
+export const LOGIN_SUCCESS = "@@login/LOGIN_SUCCESS"
+export const LOGIN_FAILURE = "@@login/LOGIN_FAILURE"
+export const LOGIN_REQUEST = "@@login/LOGIN_REQUEST"
+export const LOGOUT_REQUEST = "LOGOUT_REQUEST"
+export const LOGOUT_SUCCESS = "LOGOUT_SUCCESS"
+export const LOGOUT_FAILURE = "LOGOUT_FAILURE"

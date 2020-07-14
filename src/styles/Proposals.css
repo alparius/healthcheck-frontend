@@ -1,0 +1,71 @@
+.proposals-wrapper {
+    display: grid;
+    grid-template-columns: 200px auto;
+}
+
+.week-days-menu {
+    margin-top: 10px;
+    height: 100%;
+    background: #F8F9FA;
+}
+
+ul.week-days {
+    position: fixed;
+    list-style: none;
+    padding-left: 15px;
+}
+
+li.week-day {
+    padding: 2px;
+    margin: 8px;
+}
+
+ul.proposals-list {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+.proposal {
+    padding: 10px;
+}
+
+.proposal-card-header {
+    background: red !important;
+    color: white;
+}
+
+a.card-link {
+    color: white;
+}
+
+a.card-link:hover {
+    color:  goldenrod;
+}
+#add-proposal {
+    background: red !important;
+}
+
+#add-proposal:hover {
+    background: #E3165B !important;
+}
+
+.proposal-submit {
+    display: flex;
+    justify-content: center;
+}
+
+.proposal-details {
+    display: grid;
+    grid-template-columns: 30px auto;
+}
+
+.proposal-icon {
+    margin-top: 3px;
+    color: red;
+}
+
+.card-subtitle {
+    margin: 0 !important;
+}

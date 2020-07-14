@@ -1,0 +1,32 @@
+#leul-curajos, #doneaza {
+  width: 200px;
+  height: 200px;
+  position: fixed;
+  bottom: 0;
+}
+
+#kids {
+  height: 550px;
+}
+
+@media screen and (max-width: 1250px) {
+  #doneaza, #leul-curajos {
+    width: 130px;
+    height: 130px;
+  }
+
+  #kids {
+    height: 370px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  #leul-curajos, #doneaza {
+    width: 0;
+    height: 0;
+  }
+
+  #kids {
+    height: 200px;
+  }
+}

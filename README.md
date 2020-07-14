@@ -1,0 +1,1 @@
+Health check - frontend client

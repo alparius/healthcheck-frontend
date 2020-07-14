@@ -1,0 +1,30 @@
+#logo {
+    font-size: 1.5em;
+    color: red;
+    padding: 0;
+}
+
+#logo-image {
+    width: 132px;
+    height: 60px;
+}
+
+a.header-link {
+    font-size: 1.2em;
+    margin: 0 20px;
+    color: red;
+    font-weight: bold;
+}
+
+a.header-link:focus {
+    color: red;
+}
+
+a.header-link:hover {
+    color: red;
+    text-decoration: none;
+}
+
+a.active-link {
+    border-bottom: 2px solid red;
+}
