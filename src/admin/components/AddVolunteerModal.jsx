@@ -21,7 +21,7 @@ const AddVolunteerModal = ({
     return (
         <>
             <Button variant="danger" style={{
-                backgroundColor: "rgb(219, 61, 68)",
+                backgroundColor: "rgb(38, 174, 96)",
                 width: "100%"
             }}
                 onClick={handleShow}
@@ -80,7 +80,7 @@ const AddVolunteerModal = ({
                         invalidEmail === false && invalidHospital === false
                             ?
                             <Button variant="danger" style={{
-                                backgroundColor: "rgb(219, 61, 68)",
+                                backgroundColor: "rgb(38, 174, 96)",
                             }}
                                 onClick={() => { handleClose(); save(); }}>
                                 Save

@@ -15,7 +15,7 @@ export const loginFailureAction = () => {
         icon: 'error',
         title: 'Oops...',
         text: 'Invalid email or password!',
-        confirmButtonColor: '#db3d44',
+        confirmButtonColor: '#26ae60',
         confirmButtonText: 'OK'
     })
     return {
@@ -77,13 +77,15 @@ export const logoutSuccess = () => {
 }
 
 export const logoutFailure = () => {
-    Swal.fire({
-        icon: 'error',
-        title: 'Oops...',
-        text: 'Something went wrong. Could not logout!',
-        confirmButtonColor: '#db3d44',
-        confirmButtonText: 'OK'
-    })
+    // localStorage.removeItem('token')
+    localStorage.clear();
+    // Swal.fire({
+    //     icon: 'error',
+    //     title: 'Oops...',
+    //     text: 'Something went wrong. Could not logout!',
+    //     confirmButtonColor: '#26ae60',
+    //     confirmButtonText: 'OK'
+    // })
     return {
         type: LOGOUT_FAILURE
     }

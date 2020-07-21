@@ -32,7 +32,7 @@ ul.proposals-list {
 }
 
 .proposal-card-header {
-    background: red !important;
+    background: green !important;
     color: white;
 }
 
@@ -44,11 +44,11 @@ a.card-link:hover {
     color:  goldenrod;
 }
 #add-proposal {
-    background: red !important;
+    background: green !important;
 }
 
 #add-proposal:hover {
-    background: #E3165B !important;
+    background: #16e331 !important;
 }
 
 .proposal-submit {
@@ -63,7 +63,7 @@ a.card-link:hover {
 
 .proposal-icon {
     margin-top: 3px;
-    color: red;
+    color: green;
 }
 
 .card-subtitle {

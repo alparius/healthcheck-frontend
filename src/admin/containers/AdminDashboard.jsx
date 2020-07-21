@@ -61,7 +61,7 @@ class AdminDashboard extends React.Component {
             confirmButtonText: "Yes",
             cancelButtonText: "No",
             showCancelButton: true,
-            confirmButtonColor: '#db3d44',
+            confirmButtonColor: '#26ae60',
             position: 'center'
         }).then((isConfirm) => {
             if (isConfirm.value === true) {
@@ -81,7 +81,7 @@ class AdminDashboard extends React.Component {
         Swal.fire({
             icon: 'success',
             title: 'Volunteer deleted!',
-            confirmButtonColor: '#db3d44',
+            confirmButtonColor: '#26ae60',
             confirmButtonText: 'Got it!'
         })
     }
@@ -207,7 +207,7 @@ class AdminDashboard extends React.Component {
                                     <InputGroup.Append>
                                         <InputGroup.Text
                                             style={{
-                                                backgroundColor: "rgb(219, 61, 68)",
+                                                backgroundColor: "rgb(38, 174, 96)",
                                                 color: "white",
                                             }}>
                                             <FaSearch />

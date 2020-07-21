@@ -73,7 +73,7 @@ class ProfileCard extends React.Component {
                 icon: 'success',
                 title: 'Profile updated!',
                 text: 'We have succesfully updated your profile.',
-                confirmButtonColor: '#db3d44',
+                confirmButtonColor: '#26ae60',
             })
             this.props.getUserData(localStorage.getItem('token'));
 

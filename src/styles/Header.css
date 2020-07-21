@@ -1,6 +1,6 @@
 #logo {
     font-size: 1.5em;
-    color: red;
+    color: green;
     padding: 0;
 }
 
@@ -12,19 +12,19 @@
 a.header-link {
     font-size: 1.2em;
     margin: 0 20px;
-    color: red;
+    color: green;
     font-weight: bold;
 }
 
 a.header-link:focus {
-    color: red;
+    color: green;
 }
 
 a.header-link:hover {
-    color: red;
+    color: green;
     text-decoration: none;
 }
 
 a.active-link {
-    border-bottom: 2px solid red;
+    border-bottom: 2px solid green;
 }

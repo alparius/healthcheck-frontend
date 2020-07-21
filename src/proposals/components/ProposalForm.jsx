@@ -106,7 +106,7 @@ export default class ProposalForm extends React.Component {
         return (
             <React.Fragment>
                 <div className="message">
-                    <p style={{color: "red", textAlign:"center"}}> {this.state.message} </p>
+                    <p style={{color: "green", textAlign:"center"}}> {this.state.message} </p>
                 </div>
                 <table className="custom-event-editor" style={{ width: '100%', cellpadding: '5' }}>
                     <tbody>

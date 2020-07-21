@@ -64,7 +64,7 @@ class Header extends React.Component {
             <Navbar bg="light" sticky="top">
                 <Navbar.Brand>
                     <NavLink to={logoLink} id="logo" className="header-link">
-                        <img id="logo-image" alt="Little People" src="images/little-people-header-img.png"></img>
+                    Health Check
                     </NavLink>
                 </Navbar.Brand>
 

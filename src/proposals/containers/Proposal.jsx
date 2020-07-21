@@ -70,7 +70,7 @@ class Proposal extends React.Component {
         let end = new Date(proposal.endDateAndTime)
 
         let likesCnt = proposal.userIdsWhoVotedThisProposal.length
-        let liked = proposal.userIdsWhoVotedThisProposal.filter(id => id == userId).length > 0
+        let liked = proposal.userIdsWhoVotedThisProposal.filter(id => id === userId).length > 0
         let likeButton = this.getLikeButton(liked)
         let likes = likesCnt === 1 ? "1 like" : `${likesCnt} likes`
 

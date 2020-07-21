@@ -27,7 +27,7 @@ const loadActivitiesFailure = () => {
         icon: 'error',
         title: 'Oops...',
         text: 'Could not fetch activities from the server!',
-        confirmButtonColor: '#db3d44',
+        confirmButtonColor: '#26ae60',
         confirmButtonText: 'OK'
     })
     return {
@@ -69,7 +69,7 @@ const deleteActivityFailure = () => {
         icon: 'error',
         title: 'Oops...',
         text: 'Could not delete activity!',
-        confirmButtonColor: '#db3d44',
+        confirmButtonColor: '#26ae60',
         confirmButtonText: 'OK'
     })
     return {
@@ -103,7 +103,7 @@ const createActivityFailure = () => {
         icon: 'error',
         title: 'Oops...',
         text: 'Could not create activity!',
-        confirmButtonColor: '#db3d44',
+        confirmButtonColor: '#26ae60',
         confirmButtonText: 'OK'
     })
     return {
@@ -138,7 +138,7 @@ const updateActivityFailure = () => {
         icon: 'error',
         title: 'Oops...',
         text: 'Could not update the activity!',
-        confirmButtonColor: '#db3d44',
+        confirmButtonColor: '#26ae60',
         confirmButtonText: 'OK'
     })
     return {

@@ -41,7 +41,7 @@ const loadProposalsFailure = () => {
         icon: 'error',
         title: 'Oops...',
         text: 'Could not fetch proposals from the server!',
-        confirmButtonColor: '#db3d44',
+        confirmButtonColor: '#26ae60',
         confirmButtonText: 'OK'
     })
     return {
@@ -84,7 +84,7 @@ const deleteProposalFailure = () => {
         icon: 'error',
         title: 'Oops...',
         text: 'Could not delete proposal!',
-        confirmButtonColor: '#db3d44',
+        confirmButtonColor: '#26ae60',
         confirmButtonText: 'OK'
     })
     return {
@@ -118,7 +118,7 @@ const createProposalFailure = () => {
         icon: 'error',
         title: 'Oops...',
         text: 'Could not create proposal!',
-        confirmButtonColor: '#db3d44',
+        confirmButtonColor: '#26ae60',
         confirmButtonText: 'OK'
     })
     return {
@@ -153,7 +153,7 @@ const updateProposalFailure = () => {
         icon: 'error',
         title: 'Oops...',
         text: 'Could not update the proposal!',
-        confirmButtonColor: '#db3d44',
+        confirmButtonColor: '#26ae60',
         confirmButtonText: 'OK'
     })
     return {
@@ -188,7 +188,7 @@ const voteProposalFailure = () => {
         icon: 'error',
         title: 'Oops...',
         text: 'Could not vote the proposal!',
-        confirmButtonColor: '#db3d44',
+        confirmButtonColor: '#26ae60',
         confirmButtonText: 'OK'
     })
     return {
@@ -223,7 +223,7 @@ const unlikeProposalFailure = () => {
         icon: 'error',
         title: 'Oops...',
         text: 'Could not unlike the proposal!',
-        confirmButtonColor: '#db3d44',
+        confirmButtonColor: '#26ae60',
         confirmButtonText: 'OK'
     })
     return {
@@ -258,7 +258,7 @@ const acceptProposalFailure = () => {
         icon: 'error',
         title: 'Oops...',
         text: 'Could not accept the proposal!',
-        confirmButtonColor: '#db3d44',
+        confirmButtonColor: '#26ae60',
         confirmButtonText: 'OK'
     })
     return {

@@ -48,7 +48,7 @@ class ProfileChangePassword extends React.Component {
             icon: 'success',
             title: 'Password updated!',
             text: 'We will redirect you to login again ....',
-            confirmButtonColor: '#db3d44',
+            confirmButtonColor: '#26ae60',
             confirmButtonText:'Got it!'
         })
         localStorage.removeItem('token')
@@ -65,7 +65,7 @@ class ProfileChangePassword extends React.Component {
                 icon: 'warning',
                 title: 'Forgot something?',
                 text: 'Please make sure all fields are correct.',
-                confirmButtonColor: '#db3d44',
+                confirmButtonColor: '#26ae60',
                 confirmButtonText:'Got it!'
             })
         }

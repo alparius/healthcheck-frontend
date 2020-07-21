@@ -11,7 +11,7 @@ const VolunteerCardStatic = ({
     return (
         <Card className="volunteerCard">
             <Card.Body>
-                <Card.Title style={{color:"#db3d44"}}>
+                <Card.Title style={{color:"#26ae60"}}>
                     {volunteer.firstName} {volunteer.surname}
                     <FaTrashAlt 
                     className="icons" 

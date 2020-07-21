@@ -23,7 +23,7 @@ export const editProfileActionCreator = (username, firstName, surName, phone, re
                     icon: 'error',
                     title: 'Oops...',
                     text: 'Something went wrong.',
-                    confirmButtonColor: '#db3d44',
+                    confirmButtonColor: '#26ae60',
                     confirmButtonText: 'OK'
                 })
                 redirectOnSuccess(false);
@@ -47,7 +47,7 @@ export const changePassActionCreator = (password, redirectOnSuccess) => {
                     icon: 'error',
                     title: 'Oops...',
                     text: 'Something went wrong.',
-                    confirmButtonColor: '#db3d44',
+                    confirmButtonColor: '#26ae60',
                     confirmButtonText: 'OK'
                 })
             );

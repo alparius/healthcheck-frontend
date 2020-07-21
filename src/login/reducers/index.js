@@ -46,12 +46,12 @@ const authReducer = (state = initialState, action) => {
                 message: ''
             }
         case LOGOUT_FAILURE:
-            return {
-                isLoggedIn: true,
-                loginError: true,
-                isFetching: false,
-                message: 'Error! Could not logout'
-            }
+             return {
+                 isLoggedIn: false,
+                 loginError: false,
+                 isFetching: false,
+                 message: ''
+             }
         default:
             break;
     }

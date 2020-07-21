@@ -34,7 +34,7 @@ export const addActionCreator = (email, hospitalId,city) => {
                     icon: 'success',
                     title: 'Volunteer added!',
                     text: 'We sent an email to the given email adress with a generated password.',
-                    confirmButtonColor: '#db3d44',
+                    confirmButtonColor: '#26ae60',
                 })
                 dispatch(addSuccessAction());
                 dispatch(getVolunteersActionCreator(city));
@@ -45,7 +45,7 @@ export const addActionCreator = (email, hospitalId,city) => {
                         icon: 'error',
                         title: 'Oops...',
                         text: 'Something went wrong.',
-                        confirmButtonColor: '#db3d44',
+                        confirmButtonColor: '#26ae60',
                         confirmButtonText: 'OK'
                     })
                     dispatch(addFailureAction())
@@ -88,7 +88,7 @@ export const getVolunteersActionCreator = (city) => {
                         icon: 'error',
                         title: 'Oops...',
                         text: 'Something went wrong.',
-                        confirmButtonColor: '#db3d44',
+                        confirmButtonColor: '#26ae60',
                         confirmButtonText: 'OK'
                     })
                     dispatch(getVolunteersFailureAction())
@@ -129,7 +129,7 @@ export const getHospitalsActionCreator = (city) => {
                         icon: 'error',
                         title: 'Oops...',
                         text: 'Something went wrong.',
-                        confirmButtonColor: '#db3d44',
+                        confirmButtonColor: '#26ae60',
                         confirmButtonText: 'OK'
                     })
                     dispatch(getHospitalsFailureAction())
@@ -172,7 +172,7 @@ export const deleteActionCreator = (volunteerId,city) => {
                         icon: 'error',
                         title: 'Oops...',
                         text: 'Something went wrong.',
-                        confirmButtonColor: '#db3d44',
+                        confirmButtonColor: '#26ae60',
                         confirmButtonText: 'OK'
                     })
                     dispatch(deleteFailureAction())
