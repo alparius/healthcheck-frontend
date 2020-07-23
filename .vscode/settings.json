@@ -27,7 +27,7 @@
     "prettier.semi": true,
     "prettier.arrowParens": "always",
     "prettier.jsxBracketSameLine": false,
-    "prettier.printWidth": 130,
+    "prettier.printWidth": 150,
     "prettier.quoteProps": "consistent",
     "prettier.trailingComma": "none",
 

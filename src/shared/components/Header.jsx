@@ -13,6 +13,10 @@ class Header extends React.Component {
         return (
             <React.Fragment>
                 <Nav className="mr-auto">
+                    <NavLink className="header-link" to="/profile" activeClassName="active-link">
+                        {" "}
+                        Profile{" "}
+                    </NavLink>
                     <NavLink className="header-link" to="/calendar" activeClassName="active-link">
                         {" "}
                         Calendar{" "}
@@ -25,12 +29,6 @@ class Header extends React.Component {
                         {" "}
                         Reports{" "}
                     </NavLink>
-                    {this.props.user.isAdmin ? (
-                        <NavLink className="header-link" to="/admin" activeClassName="active-link">
-                            {" "}
-                            Volunteers{" "}
-                        </NavLink>
-                    ) : null}
                 </Nav>
 
                 <Navbar.Collapse className="justify-content-end">
