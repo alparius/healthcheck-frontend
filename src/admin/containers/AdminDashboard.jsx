@@ -72,7 +72,8 @@ class AdminDashboard extends React.Component {
                     <Button
                         disabled={this.state.invalidEmail !== false}
                         style={{
-                            backgroundColor: "rgb(38, 174, 96)"
+                            backgroundColor: "rgb(38, 174, 96)",
+                            width: "100%"
                         }}
                         onClick={() => {
                             this.save();

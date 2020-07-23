@@ -35,13 +35,11 @@ class Header extends React.Component {
 
                 <Navbar.Collapse className="justify-content-end">
                     <NavLink className="header-link" to="/profile" activeClassName="active-link">
-                        {this.props.user.firstName !== null ? this.props.user.firstName : "Not specified"}
-                        <FaUser />
+                        Account <FaUser />
                     </NavLink>
 
                     <NavLink className="header-link" to="/" onClick={this.props.logout}>
-                        Logout
-                        <FaSignOutAlt />
+                        Logout <FaSignOutAlt />
                     </NavLink>
                 </Navbar.Collapse>
             </React.Fragment>
