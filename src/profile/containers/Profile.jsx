@@ -1,9 +1,9 @@
-import React from 'react'
-import { connect } from 'react-redux'
-import { Container, Row } from 'react-bootstrap'
-import SideNavBar from '../components/SideNavBar';
+import React from "react";
+import { connect } from "react-redux";
+import { Container } from "react-bootstrap";
 
-
+import ProfileCard from "../components/ProfileCard";
+import ProfileChangePassword from "../components/ProfileChangePassword";
 
 class Profile extends React.Component {
     constructor(props) {
@@ -17,12 +17,12 @@ class Profile extends React.Component {
             city: "",
             email: "",
             confirmPassword: "",
-            notEditMode: true,
-        }
+            notEditMode: true
+        };
     }
 
     componentDidMount() {
-        var user = JSON.parse(localStorage.getItem('token'))
+        var user = JSON.parse(localStorage.getItem("token"));
         this.setState({
             username: user.username,
             firstName: user.firstName,
@@ -30,51 +30,44 @@ class Profile extends React.Component {
             phone: user.phone,
             city: user.city,
             email: "laura@gmail.com",
-            notEditMode: true,
-        })
+            notEditMode: true
+        });
     }
     onChange = (event) => {
         const { value, name } = event.target;
 
         this.setState({
             [name]: value
-        })
-    }
+        });
+    };
     toEditMode = () => {
         this.setState({
             notEditMode: false
-        })
-    }
+        });
+    };
     saveProfileInfo = () => {
         this.setState({
             notEditMode: true
-        })
-    }
+        });
+    };
     redirectOnSucces = () => {
         //TODO: call logout
-        localStorage.removeItem('token')
-        this.props.history.push("/login")
-    }
+        localStorage.removeItem("token");
+        this.props.history.push("/login");
+    };
 
     render() {
         return (
-            <Container fluid style={{ heigh: "100vh" }}>
-                <Row style={{ heigh: "100vh" }}>
-                    <SideNavBar 
-                    ></SideNavBar>
-                </Row>
+            <Container fluid className="w-75">
+                <ProfileCard />
+                <ProfileChangePassword />
             </Container>
-
-        )
+        );
     }
 }
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({});
 
-})
+const mapDispachToProps = (dispatch) => ({});
 
-const mapDispachToProps = dispatch => ({
-
-})
-
-export default connect(mapStateToProps, mapDispachToProps)(Profile)
+export default connect(mapStateToProps, mapDispachToProps)(Profile);
