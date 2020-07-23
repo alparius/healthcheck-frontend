@@ -4,7 +4,6 @@ import PrivateRoute from "./shared/components/PrivateRoute";
 import Home from "./home/containers/Home";
 import Login from "./login/components/Login";
 import News from "./news/containers/News";
-import Profile from "./profile/containers/Profile";
 import Calendar from "./calendar/containers/Calendar";
 import Header from "./shared/components/Header";
 import Footer from "./shared/components/Footer";
@@ -14,6 +13,7 @@ import { getUserData } from "./shared/actions";
 import { loginSuccessAction } from "./login/actions/actionCreators";
 import AdminDashboard from "./admin/containers/AdminDashboard";
 import Proposals from "./proposals/containers/Proposals";
+import Tab1 from "./tab1/Tab1";
 
 class App extends Component {
     componentDidMount() {
@@ -33,13 +33,14 @@ class App extends Component {
     }
 
     loggedInRoutes() {
-        let { isLoggedIn, user } = this.props;
+        let { isLoggedIn } = this.props;
         return (
             <Switch>
                 <Route exact path="/" component={Calendar} />
+                <PrivateRoute path="/profile" component={Tab1} authorized={isLoggedIn} redir="/login" />
                 <PrivateRoute path="/calendar" component={Calendar} authorized={isLoggedIn} redir="/login" />
                 <PrivateRoute path="/news" component={News} authorized={isLoggedIn} redir="/login" />
-                <PrivateRoute path="/profile" component={Profile} authorized={isLoggedIn} redir="/login" />
+                {/* <PrivateRoute path="/profile" component={Profile} authorized={isLoggedIn} redir="/login" /> */}
                 <PrivateRoute path="/proposals" component={Proposals} authorized={isLoggedIn} redir="/login" />
                 <Route path="/admin" component={AdminDashboard} />
                 <Route component={PageNotFound} />

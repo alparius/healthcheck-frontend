@@ -1,4 +1,4 @@
-import { Col, Row, Form, Button, Container, Spinner } from "react-bootstrap";
+import { Form, Button, Container, Spinner } from "react-bootstrap";
 import React from "react";
 import { connect } from "react-redux";
 import { loginActionCreator } from "../actions/actionCreators";
