@@ -1,45 +1,47 @@
-import React from 'react'
-import { connect } from 'react-redux'
+import React from "react";
+import { connect } from "react-redux";
+import { NavLink } from "react-router-dom";
 
 class Home extends React.Component {
     render() {
         return (
-            <div className="row">
-              {/* <div className="col-md-2">
-                <img alt="pic1" src="images/health.jpg" id="leul-curajos"></img>
-              </div> */}
-              <div className="col-md-8">
-                <div className="card">
-                  <img alt="pic2" src="images/health.jpg" id="kids" className="card-img-top"></img>
-                  <div className="card-body">
-                    <h3 className="card-title"><b>Lorem ipsum dolor sit amet</b></h3>
-                    <p className="card-text">
-                    Lorem ipsum dolor sit amet...
-                    </p>
-                    <h4 className="card-title"><b>Our Mission</b></h4>
-                    <p>
-                    Lorem ipsum dolor sit amet...
-                    </p>
-                    <p>
-                    Lorem ipsum dolor sit amet...
-                    </p>
-                  </div>
+            <>
+                <img alt="pic2" src="images/pulse.jpg" style={{ width: "100vw" }}></img>
+                <br />
+                <br />
+                <div className="h-75 d-flex justify-content-center align-items-center">
+                    <div style={{ lineHeight: "2em" }}>
+                        <h3>
+                            The <b style={{ color: "green" }}>Health Check</b> application
+                        </h3>
+                        <div style={{ fontSize: "20px" }}>
+                            is a platform to oversee all of your health related issues. Whether you
+                            <br /> - are searching for a specialist in your area
+                            <br /> - always forget to take your medications
+                            <br /> - want to manage your upcoming visits to your doctors
+                            <br /> - etc.
+                            <br />
+                            <br />
+                        </div>
+                        <h4>
+                            <NavLink to="/login" activeClassName="active-link">
+                                Log in
+                            </NavLink>{" "}
+                            or{" "}
+                            <NavLink to="/admin" activeClassName="active-link">
+                                Sign up
+                            </NavLink>{" "}
+                            to get started!
+                        </h4>
+                    </div>
                 </div>
-              </div>
-              {/* <div className="col-md-2">
-                <img alt="pic3" src="images/health.jpg" id="doneaza"></img>
-              </div> */}
-            </div>
-        )
+            </>
+        );
     }
 }
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({});
 
-})
+const mapDispachToProps = (dispatch) => ({});
 
-const mapDispachToProps = dispatch => ({
-
-})
-
-export default connect(mapStateToProps, mapDispachToProps)(Home)
+export default connect(mapStateToProps, mapDispachToProps)(Home);
