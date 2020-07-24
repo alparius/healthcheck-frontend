@@ -51,13 +51,13 @@ export const addActionCreator = (email) => {
                 dispatch(addSuccessAction());
             })
             .catch((err) => {
-                Swal.fire({
-                    icon: "error",
-                    title: "Oops...",
-                    text: "Something went wrong.",
-                    confirmButtonColor: "#26ae60",
-                    confirmButtonText: "OK"
-                });
+                // Swal.fire({
+                //     icon: "error",
+                //     title: "Oops...",
+                //     text: "Something went wrong.",
+                //     confirmButtonColor: "#26ae60",
+                //     confirmButtonText: "OK"
+                // });
                 dispatch(addFailureAction());
             });
     };
@@ -92,13 +92,13 @@ export const getVolunteersActionCreator = (city) => {
                 dispatch(getVolunteersSuccessAction(res.data));
             })
             .catch((err) => {
-                Swal.fire({
-                    icon: "error",
-                    title: "Oops...",
-                    text: "Something went wrong.",
-                    confirmButtonColor: "#26ae60",
-                    confirmButtonText: "OK"
-                });
+                // Swal.fire({
+                //     icon: "error",
+                //     title: "Oops...",
+                //     text: "Something went wrong.",
+                //     confirmButtonColor: "#26ae60",
+                //     confirmButtonText: "OK"
+                // });
                 dispatch(getVolunteersFailureAction());
             });
     };
@@ -131,13 +131,13 @@ export const getHospitalsActionCreator = (city) => {
                 dispatch(getHospitalsSuccessAction(res.data));
             })
             .catch((err) => {
-                Swal.fire({
-                    icon: "error",
-                    title: "Oops...",
-                    text: "Something went wrong.",
-                    confirmButtonColor: "#26ae60",
-                    confirmButtonText: "OK"
-                });
+                // Swal.fire({
+                //     icon: "error",
+                //     title: "Oops...",
+                //     text: "Something went wrong.",
+                //     confirmButtonColor: "#26ae60",
+                //     confirmButtonText: "OK"
+                // });
                 dispatch(getHospitalsFailureAction());
             });
     };
@@ -172,13 +172,13 @@ export const deleteActionCreator = (volunteerId, city) => {
                 dispatch(getVolunteersActionCreator(city));
             })
             .catch((err) => {
-                Swal.fire({
-                    icon: "error",
-                    title: "Oops...",
-                    text: "Something went wrong.",
-                    confirmButtonColor: "#26ae60",
-                    confirmButtonText: "OK"
-                });
+                // Swal.fire({
+                //     icon: "error",
+                //     title: "Oops...",
+                //     text: "Something went wrong.",
+                //     confirmButtonColor: "#26ae60",
+                //     confirmButtonText: "OK"
+                // });
                 dispatch(deleteFailureAction());
             });
     };

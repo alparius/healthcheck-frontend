@@ -1,5 +1,7 @@
 import { Card, Form, Container } from "react-bootstrap";
 import React from "react";
+import { FaEdit, FaRegSave, FaTimes } from "react-icons/fa";
+import "../profile/style/profile.css";
 
 class Tab1 extends React.Component {
     constructor(props) {
@@ -8,7 +10,8 @@ class Tab1 extends React.Component {
             birthyear: "",
             gender: "",
             height: "",
-            weight: ""
+            weight: "",
+            notEditMode: true
         };
     }
 
@@ -41,23 +44,61 @@ class Tab1 extends React.Component {
             birthyear: this.state.birthyear === null ? "" : this.state.birthyear,
             gender: this.state.gender === null ? "" : this.state.gender,
             height: this.state.height === null ? "" : this.state.height,
-            weight: this.state.weight === null ? "" : this.state.weight
+            weight: this.state.weight === null ? "" : this.state.weight,
+            notEditMode: true
+        });
+    };
+
+    toEditMode = (value) => {
+        this.setState({
+            notEditMode: value
+        });
+    };
+
+    saveProfileInfo = () => {
+        this.setState({
+            notEditMode: true
         });
     };
 
     render() {
         return (
             <Container className="w-50">
-                <Card style={{ marginTop: "8vh" }}>
+                <Card style={{ marginTop: "5vh" }}>
+                    <Card.Header>
+                        {this.state.notEditMode ? (
+                            <div style={{ float: "right" }}>
+                                <FaEdit className="icons" size="25" onClick={() => this.toEditMode(false)} /> Edit
+                            </div>
+                        ) : (
+                            <div style={{ float: "right" }}>
+                                <FaTimes
+                                    className="icons"
+                                    size="25"
+                                    onClick={() => {
+                                        this.undo();
+                                        this.toEditMode(true);
+                                    }}
+                                ></FaTimes>{" "}
+                                Cancel
+                                <FaRegSave className="icons" size="25" onClick={this.saveProfileInfo}></FaRegSave> Save
+                            </div>
+                        )}
+                    </Card.Header>
                     <Card.Body>
                         <Form>
                             <Form.Group controlId="formBirthyear">
                                 <Form.Label>Birthyear</Form.Label>
-                                <Form.Control value={this.state.birthyear} onChange={this.onChange} name="birthyear" />
+                                <Form.Control
+                                    value={this.state.birthyear}
+                                    readOnly={this.state.notEditMode}
+                                    onChange={this.onChange}
+                                    name="birthyear"
+                                />
                             </Form.Group>
                             <Form.Group controlId="formGender">
                                 <Form.Label>Gender</Form.Label>
-                                <Form.Control as="select" onChange={this.selectedOption}>
+                                <Form.Control as="select" readOnly={this.state.notEditMode} onChange={this.selectedOption}>
                                     <option id="male" value="male">
                                         Male
                                     </option>
@@ -68,11 +109,11 @@ class Tab1 extends React.Component {
                             </Form.Group>
                             <Form.Group controlId="formHeight">
                                 <Form.Label>Height (cm)</Form.Label>
-                                <Form.Control value={this.state.height} onChange={this.onChange} name="height" />
+                                <Form.Control value={this.state.height} readOnly={this.state.notEditMode} onChange={this.onChange} name="height" />
                             </Form.Group>
                             <Form.Group controlId="formWeight">
                                 <Form.Label>Weight (kg)</Form.Label>
-                                <Form.Control value={this.state.weight} onChange={this.onChange} name="weight" />
+                                <Form.Control value={this.state.weight} readOnly={this.state.notEditMode} onChange={this.onChange} name="weight" />
                             </Form.Group>
                             <br />
                             {!this.state.height || !this.state.weight ? (

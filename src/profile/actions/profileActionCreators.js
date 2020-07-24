@@ -1,5 +1,4 @@
 import axiosInstance from "../../shared/axiosinstance";
-import Swal from "sweetalert2";
 
 export const editProfileActionCreator = (username, firstName, surName, redirectOnSuccess) => {
     return (dispatch) => {
@@ -15,13 +14,13 @@ export const editProfileActionCreator = (username, firstName, surName, redirectO
                 redirectOnSuccess(true);
             })
             .catch((err) => {
-                Swal.fire({
-                    icon: "error",
-                    title: "Oops...",
-                    text: "Something went wrong.",
-                    confirmButtonColor: "#26ae60",
-                    confirmButtonText: "OK"
-                });
+                // Swal.fire({
+                //     icon: "error",
+                //     title: "Oops...",
+                //     text: "Something went wrong.",
+                //     confirmButtonColor: "#26ae60",
+                //     confirmButtonText: "OK"
+                // });
                 redirectOnSuccess(false);
             });
     };
@@ -36,13 +35,14 @@ export const changePassActionCreator = (password, redirectOnSuccess) => {
                 redirectOnSuccess();
             })
             .catch((err) =>
-                Swal.fire({
-                    icon: "error",
-                    title: "Oops...",
-                    text: "Something went wrong.",
-                    confirmButtonColor: "#26ae60",
-                    confirmButtonText: "OK"
-                })
+                // Swal.fire({
+                //     icon: "error",
+                //     title: "Oops...",
+                //     text: "Something went wrong.",
+                //     confirmButtonColor: "#26ae60",
+                //     confirmButtonText: "OK"
+                // })
+                {}
             );
     };
 };

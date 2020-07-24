@@ -14,6 +14,7 @@ import { loginSuccessAction } from "./login/actions/actionCreators";
 import AdminDashboard from "./admin/containers/AdminDashboard";
 import Proposals from "./proposals/containers/Proposals";
 import Tab1 from "./tab1/Tab1";
+import Profile from "./profile/containers/Profile";
 
 class App extends Component {
     componentDidMount() {
@@ -40,7 +41,7 @@ class App extends Component {
                 <PrivateRoute path="/profile" component={Tab1} authorized={isLoggedIn} redir="/login" />
                 <PrivateRoute path="/calendar" component={Calendar} authorized={isLoggedIn} redir="/login" />
                 <PrivateRoute path="/news" component={News} authorized={isLoggedIn} redir="/login" />
-                {/* <PrivateRoute path="/profile" component={Profile} authorized={isLoggedIn} redir="/login" /> */}
+                <PrivateRoute path="/account" component={Profile} authorized={isLoggedIn} redir="/login" />
                 <PrivateRoute path="/proposals" component={Proposals} authorized={isLoggedIn} redir="/login" />
                 <Route path="/admin" component={AdminDashboard} />
                 <Route component={PageNotFound} />
