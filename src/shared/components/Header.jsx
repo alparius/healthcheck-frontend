@@ -32,7 +32,7 @@ class Header extends React.Component {
                 </Nav>
 
                 <Navbar.Collapse className="justify-content-end">
-                    <NavLink className="header-link" to="/profile" activeClassName="active-link">
+                    <NavLink className="header-link" to="/account" activeClassName="active-link">
                         Account <FaUser />
                     </NavLink>
 
