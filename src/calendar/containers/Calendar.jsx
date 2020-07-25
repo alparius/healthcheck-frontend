@@ -62,7 +62,7 @@ class Calendar extends React.Component {
     }
 
     render() {
-        let { isAdmin, isFetching } = this.props;
+        let { isAdmin } = this.props;
         let readOnly = isAdmin ? false : true;
 
         console.log(this.props.activities);
@@ -71,41 +71,38 @@ class Calendar extends React.Component {
         // console.log(this.props.activities[3].category);
 
         return (
-            <React.Fragment>
-                {isFetching && <h1> Loading..</h1>}
-                <Container>
-                    <ScheduleComponent
-                        width="100%"
-                        height="100%"
-                        startHour={"07:00"}
-                        readonly={readOnly}
-                        selectedDate={Date.now()}
-                        showQuickInfo={true}
-                        editorTemplate={this.editorTemplate.bind(this)}
-                        eventSettings={{ dataSource: this.props.activities }}
-                        actionBegin={this.onActionBegin.bind(this)}
-                    >
-                        <ResourcesDirective>
-                            <ResourceDirective
-                                field="Category"
-                                title="Category"
-                                name="Category"
-                                textField="OwnerText"
-                                idField="OwnerId"
-                                colorField="OwnerColor"
-                                dataSource={ownerData}
-                            ></ResourceDirective>
-                        </ResourcesDirective>
-                        <ViewsDirective>
-                            <ViewDirective option="Day" />
-                            <ViewDirective option="Week" />
-                            <ViewDirective option="TimelineWeek" />
-                            <ViewDirective option="Month" />
-                        </ViewsDirective>
-                        <Inject services={[Day, Week, TimelineViews, Month, DragAndDrop, Resize]} />
-                    </ScheduleComponent>
-                </Container>
-            </React.Fragment>
+            <Container>
+                <ScheduleComponent
+                    width="100%"
+                    height="100%"
+                    startHour={"07:00"}
+                    readonly={readOnly}
+                    selectedDate={Date.now()}
+                    showQuickInfo={true}
+                    editorTemplate={this.editorTemplate.bind(this)}
+                    eventSettings={{ dataSource: this.props.activities }}
+                    actionBegin={this.onActionBegin.bind(this)}
+                >
+                    <ResourcesDirective>
+                        <ResourceDirective
+                            field="Category"
+                            title="Category"
+                            name="Category"
+                            textField="OwnerText"
+                            idField="OwnerId"
+                            colorField="OwnerColor"
+                            dataSource={ownerData}
+                        ></ResourceDirective>
+                    </ResourcesDirective>
+                    <ViewsDirective>
+                        <ViewDirective option="Day" />
+                        <ViewDirective option="Week" />
+                        <ViewDirective option="TimelineWeek" />
+                        <ViewDirective option="Month" />
+                    </ViewsDirective>
+                    <Inject services={[Day, Week, TimelineViews, Month, DragAndDrop, Resize]} />
+                </ScheduleComponent>
+            </Container>
         );
     }
 }

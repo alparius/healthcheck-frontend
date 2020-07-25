@@ -6,7 +6,7 @@
 .week-days-menu {
     margin-top: 10px;
     height: 100%;
-    background: #F8F9FA;
+    background: #f8f9fa;
 }
 
 ul.week-days {
@@ -18,6 +18,10 @@ ul.week-days {
 li.week-day {
     padding: 2px;
     margin: 8px;
+}
+
+.icons:hover {
+    transform: scale(1.3);
 }
 
 ul.proposals-list {
@@ -41,7 +45,7 @@ a.card-link {
 }
 
 a.card-link:hover {
-    color:  goldenrod;
+    color: goldenrod;
 }
 #add-proposal {
     background: green !important;

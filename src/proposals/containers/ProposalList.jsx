@@ -1,102 +1,94 @@
-import React from 'react'
-import Proposal from './Proposal'
-import { Container, Card, Row, Col, Button } from 'react-bootstrap'
-import { FaPlus } from 'react-icons/fa'
-import ProposalModal from '../components/ProposalModal'
-import { connect } from 'react-redux'
-import { createProposal } from '../actions'
-import { convertDateToString } from '../../shared/helpers'
+import React from "react";
+import { Container, Row, Col, Button, Alert } from "react-bootstrap";
+import { FaPlus, FaTrash, FaEdit } from "react-icons/fa";
+import ProposalModal from "../components/ProposalModal";
+import { connect } from "react-redux";
+import { createProposal } from "../actions";
+import { convertDateToString } from "../../shared/helpers";
+import "./style.css";
 
 class ProposalsList extends React.Component {
     constructor(props) {
-        super(props)
-        this.days = {
-            'Sunday': 0,
-            'Monday': 1,
-            'Tuesday': 2,
-            'Wednesday': 3,
-            'Thursday': 4,
-            'Friday': 5,
-            'Saturday': 6
-        }
+        super(props);
         this.state = {
-            showModal: false
-        }
-        this.createProposal = this.createProposal.bind(this)
+            showModal: false,
+            pills: [
+                { name: "Aspirin", frequency: 2, stock: 8 },
+                { name: "Algocamin", frequency: 1, stock: 20 },
+                { name: "Ibuprofen", frequency: 4, stock: 7 },
+                { name: "Parasinus", frequency: 3, stock: 2 },
+                { name: "Paracetamol", frequency: 3, stock: 100 },
+                { name: "Oxacimol", frequency: 4, stock: 16 },
+                { name: "Dental Ace", frequency: 1, stock: 20 }
+            ]
+        };
+        this.createProposal = this.createProposal.bind(this);
     }
 
     toggleModal() {
         this.setState({
             showModal: !this.state.showModal
-        })
-    }
-
-
-    filterProposals() {
-        let { day, proposals } = this.props
-        proposals = proposals.filter(proposal => {
-            let proposalDate = new Date(proposal.startDateAndTime)
-            return this.days[day] === proposalDate.getDay()
-        })
-        return proposals.sort((x, y) => y.userIdsWhoVotedThisProposal.length - x.userIdsWhoVotedThisProposal.length)
+        });
     }
 
     createProposal(proposal) {
-        proposal.startDateAndTime = convertDateToString(proposal.startDateAndTime)
-        proposal.endDateAndTime = convertDateToString(proposal.endDateAndTime)
-        this.props.createProposal(proposal)
-        this.toggleModal()
+        proposal.startDateAndTime = convertDateToString(proposal.startDateAndTime);
+        proposal.endDateAndTime = convertDateToString(proposal.endDateAndTime);
+        this.props.createProposal(proposal);
+        this.toggleModal();
     }
 
     render() {
-        let proposals = this.filterProposals()
-        let { hospitals } = this.props
-        let date = this.props.day
         return (
-            <Container fluid>
-                <Card style={{marginTop: "10px"}}>
-                    <Card.Header id="proposal-list-header"> 
+            <Container fluid className="w-75 mt-4 " style={{ marginLeft: "12em" }}>
+                <Button id="add-proposal" onClick={() => this.toggleModal()}>
+                    Track a new pill <FaPlus />
+                </Button>
+                <br />
+                <br />
+
+                <ProposalModal show={this.state.showModal} submit={this.createProposal} toggle={() => this.toggleModal()} />
+
+                {this.state.pills.map((pill) => (
+                    <Alert variant={pill.frequency * 3 > pill.stock ? "danger" : pill.frequency * 7 > pill.stock ? "warning" : "success"}>
                         <Row>
-                            <Col md={10} lg={10} xs={10}> <h2> Proposals for {date} </h2>  </Col>
-                            <Col style={{float: "right"}}>
-                                <Button 
-                                id="add-proposal"
-                                onClick={() => this.toggleModal()}>
-                                    Propose an activity <FaPlus /> 
-                                </Button>
+                            <Col>
+                                <b>{pill.name}</b>
+                            </Col>
+                            <Col>
+                                taking <b>{pill.frequency}</b> daily
+                            </Col>
+                            <Col>
+                                <b>{pill.stock}</b> in stock
+                            </Col>
+                            <Col>
+                                {Math.floor(pill.stock / pill.frequency) === 0 ? (
+                                    <>running out of it!</>
+                                ) : Math.floor(pill.stock / pill.frequency) === 1 ? (
+                                    <>
+                                        enough for only <b>1</b> day
+                                    </>
+                                ) : (
+                                    <>
+                                        enough for <b>{Math.floor(pill.stock / pill.frequency)}</b> days
+                                    </>
+                                )}
+                            </Col>
+
+                            <Col style={{ marginLeft: "5em" }}>
+                                <FaEdit className="icons" style={{ marginRight: "1em" }} />
+                                <FaTrash className="icons" />
                             </Col>
                         </Row>
-                        
-                    </Card.Header>
-                    <Card.Body>
-
-                        <ProposalModal
-                            show={this.state.showModal}
-                            submit={this.createProposal}
-                            hospitals={hospitals}
-                            toggle={() => this.toggleModal()} />
-
-                        <ul className="proposals-list">
-                            {proposals.map(proposal =>
-                                <Proposal
-                                    key={proposal.id}
-                                    proposal={proposal}
-                                    hospitals={hospitals} />
-                            )}
-                        </ul>
-                    </Card.Body>
-                </Card>
-                
-                
+                    </Alert>
+                ))}
             </Container>
-        )
-        
+        );
     }
 }
 
-const mapDispatchToProps = dispatch => ({
-    createProposal: proposal => dispatch(createProposal(proposal))
-})
+const mapDispatchToProps = (dispatch) => ({
+    createProposal: (proposal) => dispatch(createProposal(proposal))
+});
 
-
-export default connect(null, mapDispatchToProps)(ProposalsList)
+export default connect(null, mapDispatchToProps)(ProposalsList);

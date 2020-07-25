@@ -7,9 +7,6 @@ import { logoutUser } from "../../login/actions/actionCreators";
 
 class Header extends React.Component {
     loggedInHeaderLinks() {
-        let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-        let currentDate = new Date();
-        let currentDay = days[currentDate.getDay()];
         return (
             <React.Fragment>
                 <Nav className="mr-auto">
@@ -21,13 +18,9 @@ class Header extends React.Component {
                         {" "}
                         Calendar{" "}
                     </NavLink>
-                    <NavLink className="header-link" to={`/proposals/${currentDay}`} activeClassName="active-link">
+                    <NavLink className="header-link" to={`/pills`} activeClassName="active-link">
                         {" "}
-                        Proposals{" "}
-                    </NavLink>
-                    <NavLink className="header-link" to="/news" activeClassName="active-link">
-                        {" "}
-                        Reports{" "}
+                        Pill tracker{" "}
                     </NavLink>
                 </Nav>
 
@@ -66,11 +59,13 @@ class Header extends React.Component {
         if (isLoggedIn) {
             links = this.loggedInHeaderLinks();
         }
-        let logoLink = isLoggedIn ? "/calendar" : "/";
+        let logoLink = "/";
         return (
             <Navbar bg="light" sticky="top">
                 <Navbar.Brand>
                     <NavLink to={logoLink} id="logo" className="header-link">
+                        {/*<AppLogo style={{ height: "32px", width: "32px", marginRight: "4px" }} />*/}
+                        <img alt="logo" src="loggo.png" style={{ width: "5vw", margin: "-20px", marginRight: "0px" }}></img>
                         Health Check
                     </NavLink>
                 </Navbar.Brand>
